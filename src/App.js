@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import UserComponent from './Controller/user_home/UserComponent';
-import Admin_page from './Controller/user_home/Admin_page';
+import AdminPage from './Controller/user_home/AdminPage';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
 <Routes>
 <Route exact path="/" index element={ <UserComponent/>} />
        
-<Route exact path="/admin" index element={ <Admin_page/>} />
+<Route exact path="/admin" index element={ <AdminPage/>} />
 
 
         

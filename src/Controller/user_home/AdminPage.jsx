@@ -1,8 +1,9 @@
 import React, { useEffect ,useState} from 'react'
 
-const Admin_page = () => {
+const AdminPage = () => {
     const [userData, setUserData] = useState([]);
-    const url = "http://localhost:5000/api"
+    // const url = "http://localhost:5000/api"
+    const url = "https://tech-mahindra.onrender.com/api"
 
     useEffect(() => {
     const fetchData = async () => {
@@ -89,4 +90,4 @@ const Admin_page = () => {
   )
 }
 
-export default Admin_page
+export default AdminPage

@@ -4,7 +4,6 @@ import React, { useState,useEffect} from 'react'
 const Ipaddress = () => {
     const [ipaddress,setipaddress] = useState()
       
-
     const fetchip=async()=>{
        try{
         const res = await fetch('https://api.ipify.org')
@@ -14,7 +13,6 @@ const Ipaddress = () => {
        catch(err){
         console.log(err);
        }
-    
     }
     // const url = process.env.REACT_APP_BASE_URL
     // const url = "http://localhost:5000/api"
@@ -35,6 +33,7 @@ const Ipaddress = () => {
           });
          const result = await response.json()
            if(result.status){
+            //  console.log(result.server);
             console.log("got it");
            }
         }
@@ -47,7 +46,6 @@ const Ipaddress = () => {
         console.log(ipaddress);
         handleSubmit()
     }) 
-
     console.log(ipaddress);
   return (
     <>
