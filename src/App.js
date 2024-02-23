@@ -9,6 +9,7 @@ import {
 
 import UserComponent from './Controller/user_home/UserComponent';
 import AdminPage from './Controller/user_home/AdminPage';
+import UserComponent2 from './Controller/user_home/UserComponent2';
 
 function App() {
   return (

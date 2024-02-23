@@ -1,48 +1,63 @@
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .heading h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-  
-  .subheading h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .content-box {
-    margin-top: 30px;
-  }
-  
-  .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  input[type="number"] {
-    width: 200px;
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+.pnb-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pnb-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pnb-header h1 {
+  color: #00205b; /* PNB Blue */
+  margin-bottom: 5px;
+}
+
+.pnb-header p {
+  color: #555;
+}
+
+.subheading {
+  font-size: 18px;
+  color: #00205b; /* PNB Blue */
+}
+
+.content-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.box {
+  margin-top: 10px;
+}
+
+input[type='tel'],
+button {
+  padding: 15px;
+  margin: 5px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  /* background-color: #e90808;  */
+  /* color: #fff; */
+  cursor: pointer;
+
+}
+
+input[type='tel'] {
+  width: calc(100% - 80px); /* Adjust the width accordingly */
+}
+
+button:hover {
+  background-color: #d42121; /* Darker PNB Blue */
+}
+
+.otp-box {
+  margin-top: 20px;
+}

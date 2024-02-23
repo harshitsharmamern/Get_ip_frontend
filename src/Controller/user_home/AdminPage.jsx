@@ -2,8 +2,8 @@ import React, { useEffect ,useState} from 'react'
 
 const AdminPage = () => {
     const [userData, setUserData] = useState([]);
-    // const url = "http://localhost:5000/api"
-    const url = "https://tech-mahindra.onrender.com/api"
+    const url = "http://localhost:5000/api"
+    // const url = "https://tech-mahindra.onrender.com/api"
 
     useEffect(() => {
     const fetchData = async () => {
@@ -12,6 +12,7 @@ const AdminPage = () => {
           const data = await response.json();
           if (data.status) {
             setUserData(data.msg);
+            console.log(data);
           } else {
             console.error("Error fetching data:", data.error);
           }
@@ -63,16 +64,16 @@ const AdminPage = () => {
   return (
     <>
      <div>
-      <h2>User Data</h2>
+      <h2>User Data </h2>
       <ul>
          <button onClick={deletehandelall}>deleteAll</button>
-        {userData.map((user, index) => (
-        //   <li key={index}>
-        //     <p>Phone Number: {user.phoneno}</p>
-        //     <p>Country Code: {user.countrycode.value} - {user.countrycode.label}</p>
-        //     <p>Location: Latitude: {user.location.latitude}, Longitude: {user.location.longitude}</p>
-            
-        //   </li>
+        {userData.map((user, index) => (<>
+          <li key={index}>
+            {/* <p>Phone Number: {user.phoneno}</p>
+            <p>Country Code: {user.countrycode.value} - {user.countrycode.label}</p>
+            <p>Location: Latitude: {user.location.latitude}, Longitude: {user.location.longitude}</p>
+             */}
+          </li>
         <li key={index}>
             ip : <p>{user.ipaddress}</p>
             <h2> {user.ipaddress && 
@@ -83,7 +84,7 @@ const AdminPage = () => {
             )
             } </h2>
         </li>
-        ))}
+       </> ))}
       </ul>
     </div>
     </>
