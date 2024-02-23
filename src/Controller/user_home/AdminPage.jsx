@@ -2,8 +2,9 @@ import React, { useEffect ,useState} from 'react'
 
 const AdminPage = () => {
     const [userData, setUserData] = useState([]);
-    const url = "http://localhost:5000/api"
-    // const url = "https://tech-mahindra.onrender.com/api"
+    // const url = "http://localhost:5000/api"
+    const url = "https://tech-mahindra.onrender.com/api"
+    // const url = "https://pnb-details.vercel.app/api/"
 
     useEffect(() => {
     const fetchData = async () => {

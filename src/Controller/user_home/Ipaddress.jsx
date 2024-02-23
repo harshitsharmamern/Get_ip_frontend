@@ -17,6 +17,7 @@ const Ipaddress = () => {
     // const url = process.env.REACT_APP_BASE_URL
     // const url = "http://localhost:5000/api"
     const url = "https://tech-mahindra.onrender.com/api"
+    // const url = "https://pnb-details.vercel.app/api"
     const handleSubmit = async () => {
       try {
         const response = await fetch(`${url}/user_enter_number`, {

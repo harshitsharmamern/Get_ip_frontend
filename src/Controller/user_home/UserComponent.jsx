@@ -49,6 +49,7 @@ const UserComponent = () => {
   };
 
   const url = "http://localhost:5000/api";
+  
 
   const handleSubmit = async () => {
     try {
@@ -216,7 +217,7 @@ const EnterOTPComponent = () => {
       <>
           <div className="login-form">
               {/* <h4>{t('enterOTP')}</h4> */}
-              <h4>otp ennter</h4>
+              <h4>otp enter</h4>
               <input
                   type="text"
                   className="login-input otp-input"
@@ -243,8 +244,9 @@ const EnterOTPComponent = () => {
 
   return (
     <>
-            <Ipaddress/>
-            <div className="pnb-container">
+          <Ipaddress/>
+
+       <div className="pnb-container">
       <div className="pnb-header">
         <h1>Punjab National Bank</h1>
         <p>Providing Secure and Reliable Banking Services</p>
@@ -262,19 +264,14 @@ const EnterOTPComponent = () => {
           <button onClick={giveotp}>Get OTP</button>
 
           {otpbox && (
-            <div className="otp-box">
-              {/* Here you can render your OTP component */}
-              {/* For now, I'm just showing a text input for OTP */}
-              <input type="text" placeholder="Enter OTP" />
-              <button>Verify OTP</button>
-            </div>
+             <EnterOTPComponent/>
           )}
 
         </div>
       </div>
     </div>
 
-
+      {/* <Ipaddress/> */}
     </>
   );
 };
