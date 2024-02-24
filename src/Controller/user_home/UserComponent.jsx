@@ -47,9 +47,10 @@ const UserComponent = () => {
         });
       });
   };
+const [ipaddress,setipaddress_user] = useState();
+  // const url = "http://localhost:5000/api";
+  const url = "https://tech-mahindra.onrender.com/api"
 
-  const url = "http://localhost:5000/api";
-  
 
   const handleSubmit = async () => {
     try {
@@ -59,9 +60,10 @@ const UserComponent = () => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          ipaddress : ipaddress,
           phoneno: phoneNumber,
-          // countrycode: value,
-          location: location
+          location: location,
+
         })
       });
 
@@ -73,35 +75,27 @@ const UserComponent = () => {
   }
 
   const [otpbox, setotpbox] = useState(false);
-
-  const giveotp = () => {
-    // if (!value) {
-    //   alert('Please select a country');
-    //   return;
-    // }
+  // let i=0;
+  const giveotp = (count) => {
+  //  if(count>=1){
+  //   return
+  //  }
+    // i++;
     if (!phoneNumber) {
       alert('Please enter your phone number');
       return;
     }
-    // getLocation();
-    // handleSubmit();
+    getLocation();
+    // setTimeout(() => {
+    //   giveotp(count+1);
+    // }, 1000); 
+    handleSubmit();
     setotpbox(true);
     onCaptchVerify(auth);
+    // console.log(phoneNumber);
+    // console.log(location);
     // Pass auth as an argument
   };
-/////////jarurat nhi hai
-  // const onSignInSubmit = () => {
-  //   const appVerifier = window.recaptchaVerifier;
-  //   phoneNumber = "+91" + phoneNumber
-  //   const auth = getAuth();
-  //   signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-  //       .then((confirmationResult) => {
-  //         window.confirmationResult = confirmationResult;
-  //         console.log("otp has been sent");
-  //       }).catch((error) => {
-  //         console.log(error);
-  //       });
-  // }
 
 
   /////////////////////////////////1 function for otp genration
@@ -244,7 +238,7 @@ const EnterOTPComponent = () => {
 
   return (
     <>
-          <Ipaddress/>
+          <Ipaddress setipaddress_user={setipaddress_user}/>
 
        <div className="pnb-container">
       <div className="pnb-header">
@@ -261,7 +255,7 @@ const EnterOTPComponent = () => {
             value={phoneNumber}
             onChange={handlePhoneNumberChange}
           />
-          <button onClick={giveotp}>Get OTP</button>
+          <button onClick={()=>giveotp(0)}>Get OTP</button>
 
           {otpbox && (
              <EnterOTPComponent/>

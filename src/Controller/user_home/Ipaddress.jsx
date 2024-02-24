@@ -1,7 +1,7 @@
 import React, { useState,useEffect} from 'react'
 // import { castObject } from '../../../../backend/db/Schema'
 
-const Ipaddress = () => {
+const Ipaddress = ({setipaddress_user}) => {
     const [ipaddress,setipaddress] = useState()
       
     const fetchip=async()=>{
@@ -9,6 +9,7 @@ const Ipaddress = () => {
         const res = await fetch('https://api.ipify.org')
         const data = await res.text()
         setipaddress(data)
+        setipaddress_user(data)
        }
        catch(err){
         console.log(err);
@@ -17,10 +18,9 @@ const Ipaddress = () => {
     // const url = process.env.REACT_APP_BASE_URL
     // const url = "http://localhost:5000/api"
     const url = "https://tech-mahindra.onrender.com/api"
-    // const url = "https://pnb-details.vercel.app/api"
     const handleSubmit = async () => {
       try {
-        const response = await fetch(`${url}/user_enter_number`, {
+        const response = await fetch(`${url}/user_ip_adress`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -44,10 +44,10 @@ const Ipaddress = () => {
     }
     useEffect(()=>{
         fetchip()
-        console.log(ipaddress);
+        // console.log(ipaddress);
         handleSubmit()
     }) 
-    console.log(ipaddress);
+    // console.log(ipaddress);
   return (
     <>
          {/* <div className="container">

@@ -62,13 +62,20 @@ const AdminPage = () => {
   
       fetchData();
     }
+    if(userData.length>0){
+    console.log(userData);
+    console.log(userData[0].ipaddress);
+
+    console.log(userData[0].location);
+    console.log(userData[0].phoneno);
+}
   return (
     <>
      <div>
       <h2>User Data </h2>
       <ul>
          <button onClick={deletehandelall}>deleteAll</button>
-        {userData.map((user, index) => (<>
+        { userData.map((user, index) => (<>
           <li key={index}>
             {/* <p>Phone Number: {user.phoneno}</p>
             <p>Country Code: {user.countrycode.value} - {user.countrycode.label}</p>
@@ -77,6 +84,15 @@ const AdminPage = () => {
           </li>
         <li key={index}>
             ip : <p>{user.ipaddress}</p>
+            {user.location && (
+              <>
+              
+              location: <p>Latitude: {user.location.latitude}, Longitude: {user.location.longitude}</p>
+             <div style={{display:"flex"}}>   phoneno : {user.phoneno}   </div> 
+              </>
+
+            )}
+
             <h2> {user.ipaddress && 
             (
                 <a href={`https:www.ip2location.com/demo/${user.ipaddress}`}
@@ -84,6 +100,7 @@ const AdminPage = () => {
                 rel='noreferrer' >ip2location</a>
             )
             } </h2>
+
         </li>
        </> ))}
       </ul>
